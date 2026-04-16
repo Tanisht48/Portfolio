@@ -1,0 +1,64 @@
+// ============================================================
+// APP ROOT STYLES — Cursor + Footer
+// ============================================================
+
+// --- Custom Cursor ---
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid var(--ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  will-change: transform;
+  opacity: 0.4;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease, margin 0.2s ease;
+
+  &.ring-hover {
+    width: 48px;
+    height: 48px;
+    margin: -8px 0 0 -8px;
+    opacity: 0.2;
+  }
+}
+
+// --- Footer ---
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+    }
+  }
+
+  .footer-copy,
+  .footer-host {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: var(--ink3);
+  }
+}

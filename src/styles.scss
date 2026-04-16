@@ -1,1 +1,147 @@
-/* You can add global styles to this file, and also import other style files */
+// ============================================================
+// GLOBAL STYLES — Tanisht Gupta Portfolio
+// ============================================================
+
+// --- Design Tokens ---
+:root {
+  --bg: #f8f7f4;
+  --ink: #0e0e0e;
+  --ink2: #555555;
+  --ink3: #999999;
+  --line: rgba(14, 14, 14, 0.1);
+  --card: #ffffff;
+  --font-sans: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+}
+
+// --- Reset ---
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.65;
+  overflow-x: hidden;
+  cursor: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+// --- Layout ---
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+
+  @media (max-width: 768px) {
+    padding: 0 24px;
+  }
+}
+
+// --- Typography helpers ---
+.mono {
+  font-family: var(--font-mono);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink3);
+}
+
+// --- Section base ---
+section {
+  position: relative;
+}
+
+// --- Reveal animation base (CSS fallback) ---
+// anime.js overrides these on scroll trigger
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+// --- Global button styles ---
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: 1px solid var(--ink);
+  cursor: none;
+  transition: background 0.2s ease, color 0.2s ease;
+
+  &.btn-filled {
+    background: var(--ink);
+    color: var(--bg);
+
+    &:hover {
+      background: transparent;
+      color: var(--ink);
+    }
+  }
+
+  &.btn-ghost {
+    background: transparent;
+    color: var(--ink);
+
+    &:hover {
+      background: var(--ink);
+      color: var(--bg);
+    }
+  }
+}
+
+// --- Scrollbar ---
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+}
+
+// --- Selection ---
+::selection {
+  background: var(--ink);
+  color: var(--bg);
+}

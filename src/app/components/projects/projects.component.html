@@ -1,0 +1,58 @@
+<section class="projects" id="projects">
+  <div class="container">
+
+    <p class="section-label label reveal">PROJECTS</p>
+
+    <div class="projects-header reveal">
+      <h2 class="projects-heading">Selected work</h2>
+      <p class="projects-count mono">{{ projects.length }} PROJECTS</p>
+    </div>
+
+    <!-- Project list -->
+    <div class="project-list" role="list">
+      @for (project of projects; track project.num) {
+        <a
+          class="project-row"
+          [class.has-link]="project.url"
+          [href]="project.url ?? '#projects'"
+          [attr.target]="project.url ? '_blank' : null"
+          [attr.rel]="project.url ? 'noopener noreferrer' : null"
+          role="listitem"
+          (click)="project.url ? null : $event.preventDefault()"
+        >
+          <!-- Number -->
+          <span class="proj-num mono">{{ project.num }}</span>
+
+          <!-- Main info -->
+          <div class="proj-info">
+            <div class="proj-title-row">
+              <h3 class="proj-title">{{ project.title }}</h3>
+              @if (project.status) {
+                <div class="proj-status mono" [class]="'status-' + project.status">
+                  @if (project.status === 'live') {
+                    <span class="status-dot"></span>
+                  }
+                  {{ project.statusLabel }}
+                </div>
+              }
+            </div>
+            <p class="proj-desc">{{ project.description }}</p>
+            <div class="proj-tags">
+              @for (tag of project.tech; track tag) {
+                <span class="proj-tag mono">{{ tag }}</span>
+              }
+            </div>
+          </div>
+
+          <!-- Arrow -->
+          <span class="proj-arrow" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M4 10H16M16 10L10 4M16 10L10 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/>
+            </svg>
+          </span>
+        </a>
+      }
+    </div>
+
+  </div>
+</section>

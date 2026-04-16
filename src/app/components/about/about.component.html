@@ -1,0 +1,44 @@
+<section class="about" id="about">
+  <div class="container">
+
+    <p class="section-label label reveal">ABOUT</p>
+
+    <div class="about-grid">
+      <!-- Left: Bio -->
+      <div class="about-bio">
+        <h2 class="about-heading reveal">
+          Engineer. Builder.<br>Obsessed with scale.
+        </h2>
+        <p class="about-text reveal">
+          I'm Tanisht Gupta, a Software Engineer based in Gurugram, India. I specialize in building
+          high-performance, distributed systems that handle real-world load with reliability.
+        </p>
+        <p class="about-text reveal">
+          At <strong>I2V Systems</strong>, I engineered real-time security infrastructure &mdash;
+          intelligent vehicle tracking, license plate recognition, face detection, and command &amp;
+          control dashboards used in active deployments. I reduced pipeline latency by 40% and cut
+          manual operations by 60% through automation and smarter architecture.
+        </p>
+        <p class="about-text reveal">
+          Outside of work, I run a personal server stack entirely on an old Android phone from my
+          room in Gurugram. Redis, Grafana, Docker containers &mdash; all tunnelled through Cloudflare.
+          Zero cloud bills. Full observability. It's how I learn best: by shipping to production.
+        </p>
+      </div>
+
+      <!-- Right: Stats -->
+      <div class="about-stats">
+        @for (stat of stats; track stat.label; let i = $index) {
+          <div class="stat-item reveal">
+            <span
+              class="stat-number mono"
+              [attr.data-idx]="i"
+            >{{ stat.display }}</span>
+            <span class="stat-label mono">{{ stat.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+  </div>
+</section>

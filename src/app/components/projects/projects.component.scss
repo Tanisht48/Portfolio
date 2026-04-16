@@ -1,0 +1,194 @@
+.projects {
+  padding: 140px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-label {
+  margin-bottom: 48px;
+}
+
+// --- Header row ---
+.projects-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 64px;
+  gap: 16px;
+}
+
+.projects-heading {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.projects-count {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--ink3);
+  flex-shrink: 0;
+}
+
+// --- Project list ---
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+// --- Project row ---
+.project-row {
+  display: grid;
+  grid-template-columns: 56px 1fr 32px;
+  gap: 32px;
+  align-items: start;
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+  opacity: 0; // anime.js handles
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              background 0.2s ease;
+  cursor: none;
+
+  &:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  &:hover {
+    transform: translateX(16px);
+
+    .proj-arrow {
+      transform: translate(4px, -4px) rotate(0deg);
+      opacity: 1;
+    }
+
+    .proj-title {
+      opacity: 0.7;
+    }
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 40px 1fr 24px;
+    gap: 16px;
+    padding: 28px 0;
+  }
+}
+
+// --- Number ---
+.proj-num {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--ink3);
+  padding-top: 4px;
+}
+
+// --- Info block ---
+.proj-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.proj-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.proj-title {
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  transition: opacity 0.2s;
+}
+
+// --- Status badges ---
+.proj-status {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border: 1px solid currentColor;
+
+  &.status-live {
+    color: #16a34a;
+    border-color: rgba(22, 163, 74, 0.3);
+    background: rgba(22, 163, 74, 0.05);
+  }
+
+  &.status-in-dev {
+    color: var(--ink3);
+    border-color: var(--line);
+  }
+
+  &.status-professional {
+    color: var(--ink2);
+    border-color: var(--line);
+  }
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16a34a;
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
+// --- Description ---
+.proj-desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--ink2);
+  max-width: 600px;
+}
+
+// --- Tags ---
+.proj-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.proj-tag {
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--ink3);
+  padding: 3px 8px;
+  border: 1px solid var(--line);
+  background: transparent;
+  transition: background 0.15s, color 0.15s;
+}
+
+.project-row:hover .proj-tag {
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
+}
+
+// --- Arrow ---
+.proj-arrow {
+  color: var(--ink3);
+  display: flex;
+  align-items: flex-start;
+  padding-top: 4px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.2s;
+  opacity: 0.4;
+
+  svg {
+    flex-shrink: 0;
+  }
+}

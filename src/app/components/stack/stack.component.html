@@ -1,0 +1,24 @@
+<section class="stack" id="stack">
+  <div class="container">
+
+    <p class="section-label label reveal">STACK</p>
+
+    <div class="stack-header reveal">
+      <h2 class="stack-heading">Tools I build with</h2>
+    </div>
+
+    <div class="stack-grid">
+      @for (cell of cells; track cell.category) {
+        <div class="stack-cell">
+          <p class="cell-category mono">{{ cell.category }}</p>
+          <ul class="cell-items">
+            @for (item of cell.items; track item) {
+              <li class="cell-item">{{ item }}</li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,24 @@
+<nav class="nav" #navEl>
+  <div class="container">
+    <a href="#" class="nav-logo mono">TG — 2025</a>
+    <ul class="nav-links">
+      <li><a href="#about" class="mono">ABOUT</a></li>
+      <li><a href="#server" class="mono">SERVER</a></li>
+      <li><a href="#projects" class="mono">PROJECTS</a></li>
+      <li><a href="#stack" class="mono">STACK</a></li>
+      <li><a href="#contact" class="mono">CONTACT</a></li>
+    </ul>
+    <button class="nav-menu-btn mono" aria-label="Menu" (click)="toggleMenu()">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile-menu" [class.open]="menuOpen">
+    <ul>
+      <li><a href="#about" class="mono" (click)="toggleMenu()">ABOUT</a></li>
+      <li><a href="#server" class="mono" (click)="toggleMenu()">SERVER</a></li>
+      <li><a href="#projects" class="mono" (click)="toggleMenu()">PROJECTS</a></li>
+      <li><a href="#stack" class="mono" (click)="toggleMenu()">STACK</a></li>
+      <li><a href="#contact" class="mono" (click)="toggleMenu()">CONTACT</a></li>
+    </ul>
+  </div>
+</nav>

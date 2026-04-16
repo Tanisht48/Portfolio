@@ -1,0 +1,87 @@
+.stack {
+  padding: 140px 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-label {
+  margin-bottom: 48px;
+}
+
+.stack-header {
+  margin-bottom: 64px;
+}
+
+.stack-heading {
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+// --- Grid: 2x2 with 1px dividers between cells, not around ---
+.stack-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // Use box-shadow trick: cells have right/bottom borders,
+  // outer edges are borderless
+  gap: 0;
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.stack-cell {
+  padding: 48px 40px;
+  opacity: 0; // anime.js handles
+  transition: background 0.2s ease;
+  cursor: default;
+
+  // Right divider on left column
+  &:nth-child(odd) {
+    border-right: 1px solid var(--line);
+  }
+
+  // Bottom dividers on top row
+  &:nth-child(-n+2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  &:hover {
+    background: rgba(14, 14, 14, 0.03);
+  }
+
+  @media (max-width: 700px) {
+    border-right: none !important;
+    border-bottom: 1px solid var(--line) !important;
+    padding: 36px 0;
+
+    &:last-child {
+      border-bottom: none !important;
+    }
+  }
+}
+
+.cell-category {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--ink3);
+  margin-bottom: 28px;
+}
+
+.cell-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cell-item {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--ink2);
+  transition: color 0.15s;
+
+  .stack-cell:hover & {
+    color: var(--ink);
+  }
+}

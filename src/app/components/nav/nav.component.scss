@@ -1,0 +1,110 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 28px 0;
+  opacity: 0; // anime.js fades this in
+  background: transparent;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+
+    a {
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      color: var(--ink3);
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--ink);
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .nav-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: none;
+    padding: 4px;
+
+    span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--ink);
+      transition: transform 0.2s;
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  .nav-mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 24px;
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    &.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    a {
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      color: var(--ink2);
+
+      &:hover {
+        color: var(--ink);
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}

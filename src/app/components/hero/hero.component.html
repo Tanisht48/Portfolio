@@ -1,0 +1,42 @@
+<section class="hero" id="home">
+  <!-- Large background TG text -->
+  <span class="hero-bg-text" aria-hidden="true">TG</span>
+
+  <div class="container">
+    <div class="hero-inner">
+
+      <!-- Tagline -->
+      <p class="hero-tagline mono" #tagline>
+        SOFTWARE ENGINEER &mdash; GURUGRAM, INDIA
+      </p>
+
+      <!-- Animated headline -->
+      <h1 class="hero-headline" aria-label="Building systems that run at scale.">
+        @for (word of headlineWords; track word) {
+          <span class="hero-word-wrap">
+            <span class="hero-word">{{ word }}</span>
+          </span>
+        }
+      </h1>
+
+      <!-- Subtext -->
+      <p class="hero-subtext" #subtext>
+        I architect distributed systems that stay alive under pressure &mdash;
+        real-time pipelines, event-driven services, and full observability stacks.
+        Currently running production workloads off a spare Android phone in Gurugram.
+      </p>
+
+      <!-- CTAs -->
+      <div class="hero-ctas" #ctas>
+        <a href="#projects" class="btn btn-filled">VIEW WORK</a>
+        <a href="#contact" class="btn btn-ghost">GET IN TOUCH</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll" aria-hidden="true">
+    <span class="mono">SCROLL</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>

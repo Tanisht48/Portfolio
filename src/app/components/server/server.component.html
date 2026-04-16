@@ -1,0 +1,52 @@
+<section class="server" id="server">
+  <div class="container">
+
+    <p class="section-label label reveal" style="color: #666">SERVER</p>
+
+    <h2 class="server-heading reveal">
+      My servers cost <span class="server-price">&#8377;0/month.</span>
+    </h2>
+
+    <p class="server-subtext reveal">
+      I don't pay for cloud infrastructure. A spare Android phone running Termux + Docker
+      serves production traffic through a Cloudflare tunnel. Zero open ports. Full TLS.
+      47 days of uptime and counting.
+    </p>
+
+    <!-- Terminal block -->
+    <div class="terminal reveal">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <span class="terminal-title mono">tanisht&#64;server.tgupta.dev — ssh</span>
+      </div>
+      <div class="terminal-body">
+        @for (line of terminalLines; track $index) {
+          <div class="t-line mono">
+            @if (line.prompt) {
+              <span class="t-prompt">{{ line.prompt }}</span>
+              <span class="t-command">{{ line.command }}</span>
+            } @else {
+              <span class="t-output">{{ line.output }}</span>
+            }
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="server-cards">
+      @for (card of cards; track card.title) {
+        <div class="server-card">
+          <span class="card-num mono">{{ card.icon }}</span>
+          <h3 class="card-title">{{ card.title }}</h3>
+          <p class="card-desc" [innerHTML]="card.description"></p>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
