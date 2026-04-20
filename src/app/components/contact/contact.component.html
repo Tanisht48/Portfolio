@@ -38,14 +38,15 @@
           </span>
         </a>
 
-        <!-- Phone -->
-        <a [href]="phone ? 'tel:' + phone : null"
-           [class.no-link]="!phone"
+        <!-- LinkedIn -->
+        <a [href]="linkedIn"
            class="contact-link"
-           aria-label="Phone">
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="LinkedIn">
           <div class="link-meta">
-            <span class="link-label mono">PHONE</span>
-            <span class="link-value">{{ phone || '——' }}</span>
+            <span class="link-label mono">LINKEDIN</span>
+            <span class="link-value">{{ linkedIn.replace('https://', '') }}</span>
           </div>
           <span class="link-arrow" aria-hidden="true">
             <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
@@ -54,16 +55,15 @@
           </span>
         </a>
 
-        <!-- LinkedIn -->
-        <a [href]="linkedIn || null"
-           [class.no-link]="!linkedIn"
+        <!-- GitHub -->
+        <a [href]="github"
            class="contact-link"
            target="_blank"
            rel="noopener noreferrer"
-           aria-label="LinkedIn">
+           aria-label="GitHub">
           <div class="link-meta">
-            <span class="link-label mono">LINKEDIN</span>
-            <span class="link-value">{{ linkedIn ? linkedIn.replace('https://', '') : '——' }}</span>
+            <span class="link-label mono">GITHUB</span>
+            <span class="link-value">{{ github.replace('https://', '') }}</span>
           </div>
           <span class="link-arrow" aria-hidden="true">
             <svg width="18" height="18" viewBox="0 0 20 20" fill="none">
