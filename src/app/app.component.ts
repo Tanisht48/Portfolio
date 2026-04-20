@@ -13,6 +13,7 @@ import { ServerComponent } from './components/server/server.component';
 import { ProjectsComponent } from './components/projects/projects.component';
 import { StackComponent } from './components/stack/stack.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { WritingComponent } from './components/writing/writing.component';
 
 
 @Component({
@@ -24,6 +25,7 @@ import { ContactComponent } from './components/contact/contact.component';
     AboutComponent,
     ServerComponent,
     ProjectsComponent,
+    WritingComponent,
     StackComponent,
     ContactComponent,
   ],

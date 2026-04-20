@@ -1,0 +1,57 @@
+<section class="writing" id="writing">
+  <div class="container">
+
+    <p class="section-label label reveal">WRITING</p>
+
+    <div class="writing-header reveal">
+      <h2 class="writing-heading">Articles &amp; deep-dives</h2>
+      <p class="writing-count mono">{{ articles.length }} ARTICLE{{ articles.length !== 1 ? 'S' : '' }}</p>
+    </div>
+
+    <div class="article-list" role="list">
+      @for (article of articles; track article.num) {
+        <div
+          class="article-row"
+          [class.has-link]="article.url"
+          role="listitem"
+        >
+          <span class="article-num mono">{{ article.num }}</span>
+
+          <div class="article-info">
+            <div class="article-title-row">
+              <h3 class="article-title">{{ article.title }}</h3>
+              <div class="article-status mono" [class]="'status-' + article.status">
+                @if (article.status === 'published') {
+                  <span class="status-dot"></span>
+                }
+                {{ article.statusLabel }}
+              </div>
+            </div>
+
+            <p class="article-excerpt">{{ article.excerpt }}</p>
+
+            <div class="article-topics">
+              @for (topic of article.topics; track topic) {
+                <span class="article-topic mono">{{ topic }}</span>
+              }
+            </div>
+          </div>
+
+          <div class="article-cta">
+            @if (article.url) {
+              <a
+                [href]="article.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="article-link mono"
+              >READ →</a>
+            } @else {
+              <span class="article-soon mono">SOON</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

@@ -10,7 +10,7 @@ import anime from 'animejs';
 export class ContactComponent implements AfterViewInit {
   email = 'tanishtgupta42@gmail.com';
   phone = ''; // TODO: add phone number with country code
-  linkedIn = ''; // TODO: add LinkedIn URL e.g. https://linkedin.com/in/your-handle
+  linkedIn = 'https://www.linkedin.com/in/tanishtgupta/';
 
   constructor(private el: ElementRef<HTMLElement>) {}
 

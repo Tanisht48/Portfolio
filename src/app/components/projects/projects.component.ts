@@ -9,6 +9,7 @@ export interface Project {
   status: 'live' | 'in-dev' | 'professional' | null;
   statusLabel: string;
   url: string | null;
+  githubUrl: string | null;
 }
 
 @Component({
@@ -31,7 +32,8 @@ export class ProjectsComponent implements AfterViewInit {
       tech: ['.NET Core', 'Redis', 'Grafana', 'Prometheus', 'Docker'],
       status: 'live',
       statusLabel: 'LIVE — SELF HOSTED',
-      url: null, // TODO: add live URL
+      url: null,
+      githubUrl: 'https://github.com/Tanisht48/RateLimiter',
     },
     {
       num: '002',
@@ -42,6 +44,7 @@ export class ProjectsComponent implements AfterViewInit {
       status: 'in-dev',
       statusLabel: 'IN DEVELOPMENT',
       url: null,
+      githubUrl: 'https://github.com/Tanisht48/StreamHandler',
     },
     {
       num: '003',
@@ -52,6 +55,7 @@ export class ProjectsComponent implements AfterViewInit {
       status: 'professional',
       statusLabel: 'PROFESSIONAL — NDA',
       url: null,
+      githubUrl: null,
     },
     {
       num: '004',
@@ -61,7 +65,8 @@ export class ProjectsComponent implements AfterViewInit {
       tech: ['Java', 'Spring Boot', 'AWS EC2', 'JUnit 5'],
       status: null,
       statusLabel: '',
-      url: null, // TODO: add GitHub link
+      url: null,
+      githubUrl: "https://github.com/Tanisht48/Blogging_Platform_Backend_Api_With_Aws"
     },
   ];
 
