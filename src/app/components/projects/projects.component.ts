@@ -6,7 +6,7 @@ export interface Project {
   title: string;
   description: string;
   tech: string[];
-  status: 'live' | 'in-dev' | 'professional' | null;
+  status: 'live' | 'in-dev' | 'professional' | 'published' | null;
   statusLabel: string;
   url: string | null;
   githubUrl: string | null;
@@ -28,10 +28,10 @@ export class ProjectsComponent implements AfterViewInit {
       num: '001',
       title: 'Smart Rate Limiter',
       description:
-        'Production-grade distributed rate limiter with sliding-window algorithm, real-time dashboards, and sub-millisecond Redis latency. Self-hosted on Android phone server.',
+        'Production-grade distributed rate limiter with sliding-window algorithm, real-time dashboards, and sub-millisecond Redis latency. Published as a NuGet package.',
       tech: ['.NET Core', 'Redis', 'Grafana', 'Prometheus', 'Docker'],
-      status: 'live',
-      statusLabel: 'LIVE — SELF HOSTED',
+      status: 'published',
+      statusLabel: 'PUBLISHED — NUGET',
       url: null,
       githubUrl: 'https://github.com/Tanisht48/RateLimiter',
     },
